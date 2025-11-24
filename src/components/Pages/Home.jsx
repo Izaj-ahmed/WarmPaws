@@ -7,6 +7,7 @@ import img1 from '../../assets/image-1.jpg';
 import img2 from '../../assets/image-2.jpg';
 import img3 from '../../assets/image-3.jpg';
 import PopularSection from './HomeSection/PopularSection';
+import MeetOurVets from './HomeSection/MeetOurVets';
 
 
 
@@ -20,9 +21,8 @@ const Home = () => {
                     <SwiperSlide><img className='w-full h-[500px] object-cover' src={img3} alt="" /></SwiperSlide>
                 </Swiper>
             </div>
-            <div>
-                <PopularSection></PopularSection>
-            </div>
+            <PopularSection></PopularSection>
+            <MeetOurVets></MeetOurVets>
 
         </div>
         
