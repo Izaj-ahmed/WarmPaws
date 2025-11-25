@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
     
-    const {signInWithEmailPassword,setUser,user} = useContext(AuthContext);
+    const {signInWithEmailPassword,setUser,SigninWithGoogle} = useContext(AuthContext);
 
     const handleSignIn = e =>{
         e.preventDefault();
@@ -20,7 +21,15 @@ const Login = () => {
         })
         
     }
-    console.log(user);
+    const handlegoogleSignIn = ()=>{
+        SigninWithGoogle()
+        .then(result =>{
+            setUser(result.user)
+        })
+        .catch (error =>{
+            console.log(error);
+        })
+    }
     
 
 
@@ -37,6 +46,7 @@ const Login = () => {
                                 <label className="label">Password</label>
                                 <input name='password' type="password" className="input" placeholder="Password" />
                                 <div><a className="link link-hover">Forgot password?</a></div>
+                                <button onClick={handlegoogleSignIn} className='btn'><FcGoogle />Google</button>
                                 <div>
                                     <span>Don't have any account?</span><Link className='text-blue-600 underline    ' to={'/signup'}>Sing up</Link>
                                 </div>

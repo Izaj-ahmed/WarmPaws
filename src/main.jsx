@@ -9,6 +9,9 @@ import Services from './components/Pages/Services';
 import Login from './components/Pages/Login';
 import SignUp from './components/Pages/SignUp';
 import AuthProvider from './Provider/AuthProvider';
+import ProvideRouter from './Router Provider/ProvideRouter';
+import Profile from './components/Pages/Profile';
+
 
 
 const router = createBrowserRouter([
@@ -31,6 +34,10 @@ const router = createBrowserRouter([
         {
           path: '/signup',
           Component: SignUp
+        },
+        {
+          path: '/myprofile',
+          element: <ProvideRouter><Profile></Profile></ProvideRouter>
         }
       ]
     }
