@@ -11,6 +11,8 @@ import SignUp from './components/Pages/SignUp';
 import AuthProvider from './Provider/AuthProvider';
 import ProvideRouter from './Router Provider/ProvideRouter';
 import Profile from './components/Pages/Profile';
+import ServicesDetails from './components/Pages/ServicesDetails';
+import ForgatePass from './components/Pages/ForgatePass';
 
 
 
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/login',
-          Component: Login
+          element:<Login></Login>
         },
         {
           path: '/signup',
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
         {
           path: '/myprofile',
           element: <ProvideRouter><Profile></Profile></ProvideRouter>
+        },
+        {
+          path: '/details/:Id',
+          element: <ProvideRouter><ServicesDetails></ServicesDetails></ProvideRouter>
+        },
+        {
+          path: '/forget/:email',
+          element: <ForgatePass></ForgatePass>
         }
       ]
     }
