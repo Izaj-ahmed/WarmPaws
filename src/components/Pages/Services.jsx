@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { motion } from 'framer-motion';
 
 const Services = () => {
     const [services, setServices] = useState([]);
